@@ -3,6 +3,8 @@
 
 #include "souvenir.h"
 
+const int NUMOFSTADIUMS = 30;
+
 class Stadium
 {
     public:
@@ -15,6 +17,7 @@ class Stadium
         void setGrass(bool grassOrNot);
         void setPhoneNumber(std::string num);
         void setCapacity(int cap);
+        void setLeague(bool isNationalLeague);
         std::string getStadiumName() const;
         std::string getTeamName() const;
         std::string getAddress() const;
@@ -22,10 +25,20 @@ class Stadium
         bool getGrass() const;
         std::string getPhoneNumber() const;
         int getCapacity() const;
+        bool getNationalLeague() const;
 
         void addItemToSouvenirs(Item& item);
         void removeItemFromSouvenirs(Item& item);
         Item& getItemFromSouvenirs(string itemName);
+
+        bool operator<(const Stadium& other);
+        bool operator>(const Stadium& other);
+        bool operator<=(const Stadium& other);
+        bool operator>=(const Stadium& other);
+        bool operator==(const Stadium& other);
+        bool operator!=(const Stadium& other);
+
+        bool to_bool(std::string const& s) const;
     private:
         Souvenir stadiumGoods;
         std::string stadiumName;
@@ -35,6 +48,7 @@ class Stadium
         bool grass;
         std::string phoneNumber;
         int capacity;
+        bool isNationalLeague;
 };
 
 #endif // STADIUM_H

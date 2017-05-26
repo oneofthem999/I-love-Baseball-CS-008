@@ -27,12 +27,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     item.cpp \
     souvenir.cpp \
-    stadium.cpp
+    stadium.cpp \
+    stadiumgraph.cpp \
+    stadiumslist.cpp
 
 HEADERS  += mainwindow.h \
     binarytree.h \
     item.h \
     souvenir.h \
-    stadium.h
+    stadium.h \
+    stadiumgraph.h \
+    stadiumslist.h
 
 FORMS    += mainwindow.ui
