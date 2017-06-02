@@ -2,6 +2,7 @@
 #define STADIUMGRAPH_H
 
 #include <vector>
+#include <map>
 #include "stadiumslist.h"
 #include "stadium.h"
 
@@ -11,17 +12,20 @@ class StadiumGraph
         StadiumGraph();
         ~StadiumGraph();
 
-        std::vector<int> minDistance(int costs[], bool isInSet[], int size);
-        std::vector<std::vector<int>> adjacentVertices(std::vector<int> vert);
+        //std::vector<int> minDistance(int costs[], bool isInSet[], int size);
+        //std::vector<std::vector<int>> adjacentVertices(std::vector<int> vert);
 
-        //void printResult(int costs[], int parent[], int indexOfVertice) const;
-        //void printPath(int parent[], int indexOfVertice) const;
-        int* dijkstra(int source);
+        void printPath(vector<int> path) const;
+        //int* dijkstra(int source);
+        vector<int> tpMajorLeagues();
+        vector<int> tpNationalLeagues();
+        vector<int> tpAmericanLeagues();
+        bool isValidPath(vector<int> path);
+        int pathDistance(vector<int> path);
     private:
         int **adjMatrix;
         int **minimumDistances;
         Stadium *vertices;
-        StadiumsList theList;
 };
 
 #endif // STADIUMGRAPH_H

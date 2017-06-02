@@ -33,11 +33,11 @@ StadiumsList::StadiumsList()
             getline(sList, line);
             majorLeagues.insertNode(vertex);
             if (i < NUMOFSTADIUMS / 2)
-                nationalLeagues.insertNode(vertex);
+                americanLeagues.insertNode(vertex);
             else
             {
                 vertex.setLeague(false);
-                americanLeagues.insertNode(vertex);
+                nationalLeagues.insertNode(vertex);
             }
         }
         sList.close();
