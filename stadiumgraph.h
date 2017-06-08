@@ -12,20 +12,26 @@ class StadiumGraph
         StadiumGraph();
         ~StadiumGraph();
 
-        //std::vector<int> minDistance(int costs[], bool isInSet[], int size);
-        //std::vector<std::vector<int>> adjacentVertices(std::vector<int> vert);
+		void mincost(int** arr, int size, int city);
+		void mincostAmerican(int** arr, int size, int city);
+		void mincostNational(int** arr, int size, int city);
+		int least(int** arr, int size, int city);
+		int leastAmerican(int** arr, int size, int city);
+		int leastNational(int** arr, int size, int city);
+		int getCostOfTravel() { return costOfTravel; }
 
-        void printPath(vector<int> path) const;
-        //int* dijkstra(int source);
-        vector<int> tpMajorLeagues();
-        vector<int> tpNationalLeagues();
-        vector<int> tpAmericanLeagues();
-        bool isValidPath(vector<int> path);
-        int pathDistance(vector<int> path);
+		void salesmanMajor();
+		void salesmanAmerican();
+		void salesmanNational();
     private:
         int **adjMatrix;
-        int **minimumDistances;
+		int **adjMatrixNational;
+		int **adjMatrixAmerican;
+		bool *visited;
+		bool *visitedNational;
+		bool *visitedAmerican;
         Stadium *vertices;
+		int costOfTravel;
 };
 
 #endif // STADIUMGRAPH_H

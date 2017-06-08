@@ -1,11 +1,19 @@
-#include "mainwindow.h"
-#include <QApplication>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include "stadiumgraph.h"
 
-int main(int argc, char *argv[])
+using namespace std;
+
+int main()
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-
-    return a.exec();
+	StadiumGraph graph1;
+	//cout << graph1.salesmanMajor() << endl;
+	//cout << endl;
+	cout << graph1.salesmanNational() << endl;
+	cout << endl;
+	//cout << graph1.salesmanAmerican() << endl;
+	cout << endl;
+	system("pause");
+	return 0;
 }
