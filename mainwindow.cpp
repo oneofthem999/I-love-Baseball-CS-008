@@ -2,7 +2,8 @@
 #include "ui_mainwindow.h"
 #include <Qlist>
 
-StadiumsList stadiums(stadiums.names);
+StadiumsList stadiums;
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -39,8 +40,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(logOn()));
     connect(ui->pushButton_4,SIGNAL(clicked()),this,SLOT(logOut()));
     connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(editStadium()));
+    connect(ui->pushButton_5,SIGNAL(clicked()),this,SLOT(shop()));
 
     printList(stadiums.names);
+
 
 
 }
@@ -119,5 +122,10 @@ void MainWindow::printList(vector<QString> items)
     }
 }
 
-
+void MainWindow::shop()
+{
+    cart.setModal(true);
+    cart.show();
+    cart.exec();
+}
 

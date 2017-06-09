@@ -3,7 +3,7 @@
 #include <sstream>
 
 
-StadiumsList::StadiumsList(vector<QString> &names)
+StadiumsList::StadiumsList()
 {
     //vertices = new Stadium[NUMOFSTADIUMS];
     ifstream sList ("Stadiums.txt");
@@ -55,7 +55,7 @@ StadiumsList::StadiumsList(vector<QString> &names)
             getline(sList, line);
             getline(sList, line);
             std::cout<<"here"<<endl;
-            majorLeagues.insertNode(vertex);
+            //majorLeagues.insertNode(vertex);
             if (i < NUMOFSTADIUMS / 2)
             //    americanLeagues.insertNode(vertex);
                 ;

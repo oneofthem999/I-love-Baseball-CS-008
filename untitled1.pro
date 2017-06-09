@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     souvenir.cpp \
     stadium.cpp \
     stadiumgraph.cpp \
-    stadiumslist.cpp
+    stadiumslist.cpp \
+    shoppingcart.cpp \
+    dialog.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -34,12 +36,16 @@ HEADERS  += mainwindow.h \
     souvenir.h \
     stadium.h \
     stadiumgraph.h \
-    stadiumslist.h
+    stadiumslist.h \
+    shoppingcart.h \
+    dialog.h
 
 FORMS    += mainwindow.ui \
     login.ui \
     editstad.ui \
-    error.ui
+    error.ui \
+    shoppingcart.ui \
+    dialog.ui
 
 OTHER_FILES += \
     Stadiums by index.txt \

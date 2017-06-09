@@ -6,6 +6,7 @@
 
 class Souvenir
 {
+    friend class Dialog;
     public:
         Souvenir();
         void addItem(Item& item);

@@ -8,9 +8,11 @@
 #include "editstad.h"
 #include "stadiumslist.h"
 #include "binarytree.h"
+#include "shoppingcart.h"
 
 namespace Ui {
 class MainWindow;
+
 }
 
 class MainWindow : public QMainWindow
@@ -22,10 +24,13 @@ public slots:
     void logOn();
     void logOut();
     void editStadium();
+    void shop();
 
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    shoppingCart cart;
+
 
 
 

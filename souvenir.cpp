@@ -4,7 +4,12 @@ using namespace std;
 
 Souvenir::Souvenir()
 {
-
+    Item bbCap("Baseball Cap", 25.99),
+    bbBat("Baseball Bat", 35.35), pen("Team pennant, 12.99"), autog("Autographed Baseball", 19.99);
+    addItem(bbCap);
+    addItem(pen);
+    addItem(autog);
+    addItem(bbBat);
 }
 
 void Souvenir::addItem(Item& item) { souvenirList.insertNode(item); }

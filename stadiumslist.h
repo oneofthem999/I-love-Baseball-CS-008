@@ -11,7 +11,7 @@ class StadiumsList
 
 
     public:
-        StadiumsList(vector<QString> &names);
+        StadiumsList();
         std::vector<QString> names;
         std::vector<QString> team;
         std::vector<QString> phone;
