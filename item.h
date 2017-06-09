@@ -21,6 +21,8 @@ class Item
         bool operator>=(const Item& other);
         bool operator==(const Item& other);
         bool operator!=(const Item& other);
+
+
     private:
         std::string name;
         double price;

@@ -1,9 +1,11 @@
 #include <fstream>
+#include <iostream>
 #include "stadiumgraph.h"
+#include <string>
 
 bool isInVector(vector<int> vert, int num);
 void swap (int *x, int *y);
-vector<vector<int>> permute(int *a, int i, int n);
+vector<vector<int> > permute(int *a, int i, int n);
 vector<int> copy_array_to_vector(int *a, int size);
 
 StadiumGraph::StadiumGraph()
@@ -29,7 +31,10 @@ StadiumGraph::StadiumGraph()
             getline(sList, line);
             vertex.setDate(line);
             getline(sList, line);
-            num = stoi(line);
+            //num = stoi(line);
+            stringstream convert(line);
+            convert>>num;
+
             vertex.setCapacity(num);
             getline(sList, line);
             isGrass = vertex.to_bool(line);
@@ -122,10 +127,10 @@ void swap (int *x, int *y)
     *y = temp;
 }
 
-vector<vector<int>> permute(int *a, int i, int n)
+vector<vector<int> > permute(int *a, int i, int n)
 {
     int j, counter = 0;
-    static vector<vector<int>> vect;
+    static vector<vector<int> > vect;
     if (i == n)
     {
         vect.push_back(copy_array_to_vector(a, n + 1));
@@ -184,8 +189,8 @@ vector<int> StadiumGraph::tpMajorLeagues()
     for (int i = 0; i < NUMOFSTADIUMS; ++i)
         arr[i] = i;
 
-    vector<vector<int>> permutations = permute(arr, 0, NUMOFSTADIUMS - 1);
-    vector<vector<int>> possiblePaths;
+    vector<vector<int> > permutations = permute(arr, 0, NUMOFSTADIUMS - 1);
+    vector<vector<int> > possiblePaths;
 
     for (int i = 0; i < permutations.size(); ++i)
     {
@@ -227,8 +232,8 @@ vector<int> StadiumGraph::tpNationalLeagues()
             arr[i] = i;
     }
 
-    vector<vector<int>> permutations = permute(arr, 0, numOfNationalStadiums - 1);
-    vector<vector<int>> possiblePaths;
+    vector<vector<int> > permutations = permute(arr, 0, numOfNationalStadiums - 1);
+    vector<vector<int> > possiblePaths;
 
     for (int i = 0; i < permutations.size(); ++i)
     {
@@ -270,8 +275,8 @@ vector<int> StadiumGraph::tpAmericanLeagues()
             arr[i] = i;
     }
 
-    vector<vector<int>> permutations = permute(arr, 0, numOfAmericanStadiums - 1);
-    vector<vector<int>> possiblePaths;
+    vector<vector<int> > permutations = permute(arr, 0, numOfAmericanStadiums - 1);
+    vector<vector<int> > possiblePaths;
 
     for (int i = 0; i < permutations.size(); ++i)
     {

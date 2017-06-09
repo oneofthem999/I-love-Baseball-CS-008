@@ -3,8 +3,10 @@
 
 #include <vector>
 #include <map>
+#include <sstream>
 #include "stadiumslist.h"
 #include "stadium.h"
+
 
 class StadiumGraph
 {
