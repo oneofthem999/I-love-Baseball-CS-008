@@ -12,12 +12,8 @@ class StadiumGraph
         StadiumGraph();
         ~StadiumGraph();
 
-		void mincost(int** arr, int size, int city);
-		void mincostAmerican(int** arr, int size, int city);
-		void mincostNational(int** arr, int size, int city);
-		int least(int** arr, int size, int city);
-		int leastAmerican(int** arr, int size, int city);
-		int leastNational(int** arr, int size, int city);
+		int travelingSalesman(int index, vector<int> vertices, vector<int> &backTrack);
+
 		int getCostOfTravel() { return costOfTravel; }
 
 		void salesmanMajor();
@@ -31,7 +27,7 @@ class StadiumGraph
 		bool *visitedNational;
 		bool *visitedAmerican;
         Stadium *vertices;
-		int costOfTravel;
+		double costOfTravel;
 };
 
 #endif // STADIUMGRAPH_H
